@@ -929,17 +929,17 @@ transform: scaleX(0);
   border-top-left-radius: 0;
   border-bottom-left-radius: 10px;
 }
-.projects .photo1 .photo-git button{
+.projects .photo1 .photo-git button:nth-child(even){
   background-color: white;
   color: black;
   border: 2px solid black;
   border-radius: 5px;
 }
-.projects .photo1 .photo-git button{
+.projects .photo1 .photo-git button:nth-child(even){
   transition-duration: 0.4s;
 }
 
-.projects .photo1 .photo-git button:hover {
+.projects .photo1 .photo-git button:nth-child(even) {
   background-color: black; /* Green */
   color: white;
   transition: background-color 0.3s ease-in-out;
@@ -947,6 +947,14 @@ transform: scaleX(0);
 .projects .photo1:hover .photo-github{
   opacity: 1;
   transition: opacity 0.8s ease-in-out;
+}
+.demo{
+  background-color: black;
+  color: white;
+}
+.demo:hover{
+  color: black;
+  background-color: white;
 }
 /* .projects .photo1 .photo-title{
   position: absolute;
