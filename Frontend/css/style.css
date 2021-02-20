@@ -54,6 +54,9 @@ ul {
 img {
   vertical-align: middle;
   max-width: 400px;
+  object-fit: cover;
+  min-height: 350px;  
+  
 }
 .container {
   max-width: 1140px;
@@ -380,7 +383,9 @@ img {
 
 .home-section .home-img .img-box {
   /* background-color: red; */
+  /* max-width: 450px; */
   max-width: 400px;
+  min-height: 350px;  
   display: block;
   margin: auto;
   border-radius: 50%;
@@ -448,6 +453,18 @@ img {
 opacity: 0;
 transform: scaleY(0);
 }
+.maininfo_aboutme[data-scroll="in"] .about-info
+{
+opacity: 1;
+transition-delay: 0.5s;
+transform: scaleX(1);
+}
+.maininfo_aboutme[data-scroll="out"] .about-info
+{
+opacity: 0;
+transform: scaleX(0);
+}
+
 .about-section .about-img .social-links a {
   display: inline-block;
   height: 40px;
@@ -479,6 +496,9 @@ transform: scaleY(0);
   flex: 0 0 60%;
   max-width: 60%;
   padding: 0 15px 60px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease-in-out;
 }
 .about-section .about-info p {
   font-size: 16px;
@@ -603,6 +623,7 @@ transform: scaleY(0);
   max-width: 100%;
   position: relative;
 }
+
 .about-section .timeline::before {
   content: "";
   width: 1px;
@@ -614,6 +635,7 @@ transform: scaleY(0);
 }
 .about-section .timeline .timeline-item {
   /* background-color: blue; */
+
   flex: 0 0 100%;
   max-width: 100%;
   padding: 0 15px;
@@ -632,6 +654,7 @@ transform: scaleY(0);
   border-radius: 5px;
   position: relative;
 }
+
 .about-section .timeline .timeline-item-inner::before {
   content: "";
   position: absolute;
@@ -797,3 +820,223 @@ transform: scaleY(0);
   color: var(--skin-color);
 }
 /* Services Grid Ends */
+
+/* Projects starts here */
+.project-main{
+  display: flex;
+  flex-direction: column;
+}
+.projects{
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.projects .photo1{
+  flex: 0 0 40%;
+  width: 40%;
+}
+.projects .text{
+  flex: 0 0 60%;
+}
+.projects .photo1{
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.projects .photo-data{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.projects .photo-title h2{
+  margin: 10px;
+  font-weight: bolder;
+}
+.photo-content .photo-content-inner {
+  padding: 10px 0px 20px 10px;
+  margin: 10px;
+}
+.photo-content .photo-content-inner p{
+  font-weight: bold;
+}
+.photo-content .photo-content-inner span{
+  font-weight: bold;
+  color: white;
+}
+
+.projects .photo-data .photo-title{
+  position: absolute;
+  z-index: 2;
+}
+.projects .photo-data .bg-progress{
+  /* background-color: #F5AA09; */
+  background-color: #FF7F50;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scaleX(0.45);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 250px;
+  transform-origin: left;
+  transition: transform 0.5s linear;
+}
+.projects .photo1:hover .bg-progress{
+  z-index: -1;
+  border-bottom-right-radius: 0px;
+  background-color: #F5AA09;
+  transform: scaleX(1);
+}
+.projects .photo1:hover .photo-content{
+  opacity: 1;
+  transition-delay: 1s;
+  transition: opacity 0.8s ease-in-out;
+}
+.projects .photo1 .photo-content{
+  margin-top: 40px;
+  opacity: 0;
+  transition: margin-top 0.5s ease-in-out;
+}
+
+.projects .photo1 .photo-git .photo-github{
+  opacity: 0;
+  padding: 10px;
+  /* margin: 0 18px 10px; */
+  /* border: 2px solid lightgray; */
+  /* border-radius: 10px; */
+  cursor: pointer;
+}
+.projects .photo1 .photo-git{
+  /* position: static; */
+  z-index: 999;
+  padding: 10px;
+  background-color: #1E3D59;
+  transform: scaleX(0.15);
+  transform-origin: right;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 10px;
+  transition: transform 0.5s linear;
+}
+.projects .photo1:hover .photo-git{
+  transform: scaleX(1);
+  background-color: #F5AA09;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 10px;
+}
+.projects .photo1 .photo-git button{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.projects .photo1 .photo-git button{
+  transition-duration: 0.4s;
+}
+
+.projects .photo1 .photo-git button:hover {
+  background-color: black; /* Green */
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.projects .photo1:hover .photo-github{
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+/* .projects .photo1 .photo-title{
+  position: absolute;
+} */
+/* .bg-progress {
+  position: absolute;
+  background: lightgreen;
+  border-bottom-right-radius: 250px;
+  
+  width: 36.4%;
+  height: 19%;
+  z-index: 1;
+  transition: transform 0.3s linear;
+  transform: scaleX(0.5);
+  transform-origin: left;
+}
+.projects .photo1 .photo-content h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.projects .photo1:hover .photo-title{
+  opacity: 0;
+}
+.projects .photo1:hover .bg-progress{
+  transform: scaleX(1);
+  border-bottom-right-radius: 10px;
+  z-index: -1;
+}
+.projects .photo1:hover .photo-content{
+  opacity: 1;
+  transform: scaleY(1);
+}
+.projects .photo1 .photo-content .photo-github{
+  padding: 5px;
+  margin: 0 18px 10px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  
+} */
+/* .projects .photo1:hover .photo-github{
+  transform: scale(1.5);
+}
+.projects .photo1:hover .photo-content-inner{
+  opacity: 1;
+  margin-left: 65%;
+  transform: scaleX(1);
+  
+} */
+/* .projects .photo1:hover .photo-git{
+  transform: scaleX(1);
+}
+.photo-git{
+  background-color: black;
+  transform: scaleX(0.2);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right;
+} */
+/* .projects .photo1 .photo-content-inner{
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.projects .photo1 .photo-content-inner p{
+  font-weight: bold;
+}
+.projects .photo1 .photo-content-inner span{
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+}
+.projects .photo1  .photo-title h1{
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
+.projects .photo1 .photo-title{
+  position: absolute;
+  z-index: 2;
+}
+.projects .photo1 .photo-content{
+ 
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: all 0.5s ease-in-out;
+  
+}
+.projects .photo1,.text{
+  flex: 0 0 50%;
+  width: 50%;
+} */
+/* Projects End Here */
