@@ -885,6 +885,18 @@ transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s linear;
 }
+.projects .text:nth-child(odd){
+  padding: 15px;
+  text-align: end;
+}
+.projects .text:nth-child(even)
+{
+  padding: 15px;
+  text-align: start;
+}
+.projects .text span{
+  font-weight: bold;
+}
 .projects .photo1:hover .bg-progress{
   z-index: -1;
   border-bottom-right-radius: 0px;
