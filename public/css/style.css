@@ -1216,6 +1216,7 @@ transform: scaleX(0);
   }
   .experience > .row > .timeline > .row > .timeline-item-inner{
       height: fit-content;
+      width: fit-content;
   }
 }
 
